@@ -121,10 +121,9 @@ The zoos want to display both the scientific name and the animal name in front o
   and each string should follow this pattern: "Name: Jackal, asiatic, Scientific: Canis aureus."
 
 */
-
+const displayNames  = [];
 zooAnimals.forEach((animal) => {
- const displayNames  = [];
- displayNames.push(`Name: ${zooAnimals.animal_name}, Scientific: ${zooAnimals.scientific_name}.`);
+ displayNames.push(`Name: ${animal.animal_name}, Scientific: ${animal.scientific_name}.`);
 });
 console.log(displayNames);
 /* Request 2: .map()
@@ -132,8 +131,10 @@ console.log(displayNames);
 The zoos need a list of all their animal's names (animal_name only) converted to lower case. Using map, create a new array of strings named lowCaseAnimalNames, each string following this pattern: "jackal, asiatic". Log the resut.
 
 */
+const lowCaseAnimalNames = zooAnimals.map(function(arrItem){
+    return arrItem.animal_name.toLowerCase();
+})
 
-const lowCaseAnimalNames = [];
 console.log(lowCaseAnimalNames);
 
 /* Request 3: .filter() 
